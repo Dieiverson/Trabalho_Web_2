@@ -1,0 +1,30 @@
+{
+    "name": "trabalho_web_2",
+    "version": "1.0.0",
+    "description": "Trabalho desenvolvido para a disciplina de Dev Web II",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon ./server/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Dieiverson/Trabalho_Web_2.git"
+    },
+    "keywords": [
+        "Trabalho",
+        "Desenvolvimento",
+        "Web"
+    ],
+    "author": "Dieiverson, Igor M., Gabriel R.",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Dieiverson/Trabalho_Web_2/issues"
+    },
+    "homepage": "https://github.com/Dieiverson/Trabalho_Web_2#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "mongoose": "^5.10.7",
+        "nodemon": "^2.0.4"
+    }
+}

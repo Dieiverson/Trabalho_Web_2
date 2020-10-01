@@ -1,0 +1,14 @@
+{
+    "usuario": "dieiverson",
+    "nome": "Dieiverson Kava",
+    "cpf": "054.654.654-55",
+    "senha": "admin",
+    "enderecos": [{
+        "pais": "Brasil",
+        "estado": "PR",
+        "cidade": "Curitiba",
+        "bairro": "Bairro A",
+        "rua": "Rua B",
+        "numero": "145"
+    }]
+}
