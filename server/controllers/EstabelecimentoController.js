@@ -5,7 +5,7 @@ class EstabelecimentoController
 
 async CadastrarEstabelecimento(req, res) 
 {
-    var { estabelecimento } = req.body;
+    //var  estabelecimento  = req.body;
     //console.log(nomeUsuario);
     var user = await estabelecimento.find({ cnpj: req.body.cnpj });
     if (user[0] != null) 
