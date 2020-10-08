@@ -32,7 +32,7 @@ class UsuarioController {
                 if (err)
                     return res.send(500, { error: err });
             });
-        res.status(200).json(result);
+       return res.status(200).json(result);
     }
 }
 

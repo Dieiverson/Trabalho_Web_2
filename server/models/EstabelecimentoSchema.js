@@ -1,17 +1,16 @@
 const mongoose = require("mongoose");
+const { stringify } = require("querystring");
 
-const usuarioSchema = new mongoose.Schema({
-    usuario: {
-        type: String,
-        required: [true, "O campo usuario é obrigatório."]
-    },
+const estabelecimentoSchema = new mongoose.Schema({
+  
+   
     nome: {
         type: String,
         required: [true, "O campo nome é obrigatório."]
     },
-    cpf: {
+    cnpj: {
         type: String,
-        required: [true, "O campo CPF é obrigatório."]
+        required: [true, "O campo CNPJ é obrigatório."]
     },
     senha: {
         type: String,
@@ -24,6 +23,9 @@ const usuarioSchema = new mongoose.Schema({
     enderecos: {
         type: String
     },
+    telefone: {
+        type: String
+    }
 });
 
-module.exports = mongoose.model("Usuarios", usuarioSchema);
+module.exports = mongoose.model("estabelecimento", estabelecimentoSchema);
