@@ -1,27 +1,33 @@
 const mongoose = require("mongoose");
 
 const usuarioSchema = new mongoose.Schema({
-    usuario: {
+    usuario: 
+    {
         type: String,
         required: [true, "O campo usuario é obrigatório."]
     },
-    nome: {
+    nome: 
+    {
         type: String,
         required: [true, "O campo nome é obrigatório."]
     },
-    cpf: {
+    cpf: 
+    {
         type: String,
         required: [true, "O campo CPF é obrigatório."]
     },
-    senha: {
+    senha: 
+    {
         type: String,
         required: [true, "O campo senha é obrigatório."]
     },
-    dataCadastro: {
+    dataCadastro:
+    {
         type: Date,
         default: Date.now
     },
-    enderecos: {
+    enderecos: 
+    {
         type: String
     },
 });

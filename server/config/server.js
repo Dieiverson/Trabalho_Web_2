@@ -20,6 +20,7 @@ app.use('/', routes);
 
 //Definindo a porta de escuta
 const PORTA = 1234;
-app.listen(PORTA, function() {
+app.listen(PORTA, function() 
+{
     console.log("Servidor rodando na porta " + PORTA);
 });

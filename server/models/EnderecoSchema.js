@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const endereco = new mongoose.Schema({
+const endereco = new mongoose.Schema(
+{
     pais: {
         type: String,
         required: [false]

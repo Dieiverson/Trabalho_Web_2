@@ -1,13 +1,15 @@
 const estabelecimento = require("../models/EstabelecimentoSchema.js");
 
-class EstabelecimentoController {
+class EstabelecimentoController 
+{
 
-
-async CadastrarEstabelecimento(req, res) {
+async CadastrarEstabelecimento(req, res) 
+{
     var { estabelecimento } = req.body;
     //console.log(nomeUsuario);
     var user = await estabelecimento.find({ cnpj: req.body.cnpj });
-    if (user[0] != null) {
+    if (user[0] != null) 
+    {
         console.log("Não inseriu");
         return res.status(404).send("Este estabelecimento já existe. Tente outro.")
     } else {
@@ -16,7 +18,8 @@ async CadastrarEstabelecimento(req, res) {
         return res.status(200).json(resultado);
     }
 }
-async ListarEstabelecimento(req, res) {
+async ListarEstabelecimento(req, res) 
+{
     var result = await estabelecimento.find({});
     if (!result) {
         return res.status(404).send("Não há estabelecimentos cadastrados")

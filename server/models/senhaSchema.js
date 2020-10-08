@@ -4,15 +4,18 @@ const { stringify } = require("querystring");
 const senhaSchema = new mongoose.Schema({
   
    
-    idEstabelecimento: {
+    idEstabelecimento: 
+    {
         type: Number,
         required: [true, "O campo nome é obrigatório."]
     },
-    idPessoa: {
+    idPessoa: 
+    {
         type: Number,
         required: [true, "O campo CNPJ é obrigatório."]
     },
-    senha: {
+    senha: 
+    {
         type: String,
         required: [true, "O campo senha é obrigatório."]
     },
