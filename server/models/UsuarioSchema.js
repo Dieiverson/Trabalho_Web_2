@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const endereco = require("./EnderecoSchema");
 
 const usuarioSchema = new mongoose.Schema(
 {
@@ -29,7 +30,7 @@ const usuarioSchema = new mongoose.Schema(
     },
     enderecos: 
     {
-        type: String
+        type: [endereco]
     },
 });
 
