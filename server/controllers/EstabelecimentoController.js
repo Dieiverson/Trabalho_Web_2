@@ -21,7 +21,8 @@ async CadastrarEstabelecimento(req, res)
 async ListarEstabelecimento(req, res) 
 {
     var result = await estabelecimento.find({});
-    if (!result) {
+    if (!result) 
+    {
         return res.status(404).send("Não há estabelecimentos cadastrados")
     }
         console.log("Inseriu");

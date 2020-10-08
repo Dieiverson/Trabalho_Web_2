@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const { stringify } = require("querystring");
 
-const senhaSchema = new mongoose.Schema({
-  
-   
+const senhaSchema = new mongoose.Schema(
+{
+    
     idEstabelecimento: 
     {
         type: Number,

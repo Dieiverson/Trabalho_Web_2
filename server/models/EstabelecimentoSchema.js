@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const { stringify } = require("querystring");
 
-const estabelecimentoSchema = new mongoose.Schema({
+const estabelecimentoSchema = new mongoose.Schema(
+{
   
-   
     nome: 
     {
         type: String,
@@ -25,7 +25,7 @@ const estabelecimentoSchema = new mongoose.Schema({
         default: Date.now
     },
     enderecos:
-     {
+    {
         type: String
     },
     telefone: 
