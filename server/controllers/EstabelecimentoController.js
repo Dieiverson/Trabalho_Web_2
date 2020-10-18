@@ -30,6 +30,13 @@ async ListarEstabelecimento(req, res)
         var resultado = await estabelecimento.create(result);
         return res.status(200).json(resultado);
 }
+
+async RemoverEstabelecimento(req, res) 
+{
+    var cnpjEstab = req.params.cnpjEstabelecimento;
+    var result = await estabelecimento.findOneAndDelete({ cnpj: cnpjEstab });
+    return res.status(200).json(result);
+}
 }
 
 module.exports = new EstabelecimentoController();
