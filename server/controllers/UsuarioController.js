@@ -24,8 +24,28 @@ class UsuarioController
     }
     async Update(req, res) 
     {
-        var idUser = req.params.usuario;
+        var user = req.body.user;
+        var user = await usuario.find({ cpf: cpfUsuario });
+        if (user[0] != null) 
+        {
+            console.log("Foi!");
+            var result = await usuario.update(req.body);
+            return res.status(200).json(result);
+        }
+         else 
+        {
+            console.log("Não foi");
+            return res.status(404).send("Essa pessoa não existe. A registre no sistema primeiro");
+        }
     }
+ //Remover
+    async Remover(req, res) 
+    {
+        var cpfUser = req.params.cpfUsuario;
+        var result = await usuario.findOneAndRemove({ cpf: cpfUser});
+        return res.status(200).json(result);
+    }
+
     async Login(req, res) 
     {
         var user = req.params.usuario;
