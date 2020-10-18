@@ -19,26 +19,40 @@ class UsuarioController
 
     async Get(req, res) 
     {
-        var result = await usuario.find({}); //Find sem parâmetro para trazer todos
-        res.status(200).json(result);
+        {
+            var result = await usuario.find({});
+            if (!result) 
+            {
+                return res.status(404).send("Não há usuários cadastrados")
+            }
+                console.log("Inseriu");
+                console.log(result);
+                var resultado = await usuario.create(result);
+                return res.status(200).json(resultado);
+        }        
     }
+
+    //Socorro
+    /*
     async Update(req, res) 
     {
-        var user = req.body.user;
-        var user = await usuario.find({ cpf: cpfUsuario });
-        if (user[0] != null) 
-        {
-            console.log("Foi!");
-            var result = await usuario.update(req.body);
-            return res.status(200).json(result);
+            var cpfUser = req.params.cpfUsuario;
+            var user = req.body;
+            console.log(req.body);
+            const update = 
+            {
+                "$set": 
+                {
+                  "usuario":usuario.usuario,
+                  "nome":usuario.nome,
+                  "cpf":usuario.cpf,
+                  "senha":usuario.senha
+                }
+            };
+            var resultado = await user.findOneAndUpdate({ cpf: cpfUser},update);
+            return res.status(200).json(resultado);
         }
-         else 
-        {
-            console.log("Não foi");
-            return res.status(404).send("Essa pessoa não existe. A registre no sistema primeiro");
-        }
-    }
- //Remover
+    */
     async Remover(req, res) 
     {
         var cpfUser = req.params.cpfUsuario;
