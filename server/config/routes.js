@@ -16,4 +16,5 @@ router.post("/CadastrarEstabelecimento", estabelecimentoController.CadastrarEsta
 router.post("/DeletarEstabelecimento/:cnpjEstabelecimento", estabelecimentoController.RemoverEstabelecimento);
 router.get("/ListarEstabelecimento", estabelecimentoController.ListarEstabelecimento);
 router.post("/senha/gerar", senhaController.gerarSenha);
+router.post("/AlterarEstabelecimento", estabelecimentoController.AlterarEstabelecimento);
 module.exports = router;

@@ -31,6 +31,25 @@ async ListarEstabelecimento(req, res)
         return res.status(200).json(resultado);
 }
 
+/*async AlterarEstabelecimento(req, res) {
+    var estabelecimentos = req.body;
+    console.log( req.body);
+    const update = 
+    {
+        "$set": {
+          "nome":estabelecimento.nome,
+          "cnpj":estabelecimento.cnpj,
+          "senha":estabelecimento.senha,
+          "enderecos":estabelecimento.enderecos,
+          "telefone":estabelecimento.telefone
+        }
+    };
+
+    var resultado = await estabelecimentos.findOneAndUpdate({ cnpj: estabelecimento.cnpj },update);
+    return res.status(200).json(resultado);
+}
+*/
+
 async RemoverEstabelecimento(req, res) 
 {
     var cnpjEstab = req.params.cnpjEstabelecimento;
