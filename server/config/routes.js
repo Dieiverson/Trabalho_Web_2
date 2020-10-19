@@ -9,7 +9,7 @@ router.get("/Listar", usuarioController.Get);
 router.post("/Cadastrar", usuarioController.Cadastrar);
 router.post("/Deletar/:cpfUsuario", usuarioController.Remover);
 router.get("/Login/:usuario/:senha", usuarioController.Login);
-//router.post("/Alterar", usuarioController.Update);
+router.post("/Alterar/:cpfUsuario", usuarioController.Update);
 
 //Estabelecimento
 router.post("/CadastrarEstabelecimento", estabelecimentoController.CadastrarEstabelecimento);

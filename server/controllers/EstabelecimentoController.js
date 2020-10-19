@@ -31,24 +31,26 @@ async ListarEstabelecimento(req, res)
         return res.status(200).json(resultado);
 }
 
-/*async AlterarEstabelecimento(req, res) {
+async AlterarEstabelecimento(req, res) 
+{
     var estabelecimentos = req.body;
     console.log( req.body);
     const update = 
     {
-        "$set": {
-          "nome":estabelecimento.nome,
-          "cnpj":estabelecimento.cnpj,
-          "senha":estabelecimento.senha,
-          "enderecos":estabelecimento.enderecos,
-          "telefone":estabelecimento.telefone
+        "$set": 
+        {
+          "nome":estabelecimentos.nome,
+          "cnpj":estabelecimentos.cnpj,
+          "senha":estabelecimentos.senha,
+          "enderecos":estabelecimentos.enderecos,
+          "telefone":estabelecimentos.telefone
         }
     };
 
-    var resultado = await estabelecimentos.findOneAndUpdate({ cnpj: estabelecimento.cnpj },update);
+    var resultado = await estabelecimento.findOneAndUpdate({ cnpj: estabelecimentos.cnpj },update);
     return res.status(200).json(resultado);
 }
-*/
+
 
 async RemoverEstabelecimento(req, res) 
 {

@@ -32,27 +32,35 @@ class UsuarioController
         }        
     }
 
-    //Socorro
-    /*
     async Update(req, res) 
     {
-            var cpfUser = req.params.cpfUsuario;
             var user = req.body;
+            var cpfUser = user.cpf;
             console.log(req.body);
             const update = 
             {
                 "$set": 
                 {
-                  "usuario":usuario.usuario,
-                  "nome":usuario.nome,
-                  "cpf":usuario.cpf,
-                  "senha":usuario.senha
+                  "usuario":user.usuario,
+                  "nome":user.nome,
+                  "cpf":user.cpf,
+                  "senha":user.senha,
+                  "enderecos":[
+                  {
+                    "pais":user.enderecos[0].pais, 
+                    "estado":user.enderecos[0].estado,       
+                    "cidade":user.enderecos[0].cidade, 
+                    "bairro":user.enderecos[0].bairro,
+                    "rua":user.enderecos[0].rua,   
+                    "numero":user.enderecos[0].numero 
+                  }
+                ]
                 }
             };
-            var resultado = await user.findOneAndUpdate({ cpf: cpfUser},update);
+            var resultado = await usuario.findOneAndUpdate({ cpf: cpfUser},update);
             return res.status(200).json(resultado);
         }
-    */
+    
     async Remover(req, res) 
     {
         var cpfUser = req.params.cpfUsuario;
