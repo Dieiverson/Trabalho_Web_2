@@ -1,0 +1,36 @@
+mat-card-title {
+    text-align: center;
+}
+
+.mat-form-field {
+    display: grid !important;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.mat-typography {
+    background-color: aqua !important;
+}
+
+button {
+    margin: auto !important;
+    display: table;
+}
+
+a {
+    color: white !important;
+}
+
+h1 {
+    color: black !important;
+    font-weight: 600;
+    font-family: cursive;
+    text-align: center;
+}
+
+.card {
+    max-width: 500px !important;
+    margin: auto;
+    background-color: lightslategrey !important;
+}

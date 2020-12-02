@@ -1,0 +1,23 @@
+mat-form-field {
+    width: 30%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.btnAddEndereco {
+    display: grid;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 100px;
+}
+
+.botaoCad {
+    margin: auto !important;
+    display: table;
+    width: 300px;
+    margin-top: 10px !important;
+}
+
+table {
+    width: 100%;
+}

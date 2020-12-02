@@ -1,0 +1,31 @@
+<mat-card class="card">
+    <mat-card-title>Lista de estabelecimentos</mat-card-title>
+    <table mat-table [dataSource]="estabelecimentosTabela" class="mat-elevation-z8">
+        <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
+            <td mat-cell *matCellDef="let estabelecimento"> {{estabelecimento.nome}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cnpj">
+            <th mat-header-cell *matHeaderCellDef> CNPJ </th>
+            <td mat-cell *matCellDef="let estabelecimento"> {{estabelecimento.cnpj}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataCadastro">
+            <th mat-header-cell *matHeaderCellDef> Data Cadastro </th>
+            <td mat-cell *matCellDef="let estabelecimento"> {{estabelecimento.dataCadastro}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="gerar">
+            <th mat-header-cell *matHeaderCellDef> Gerar Senha </th>
+            <td mat-cell *matCellDef="let estabelecimento">
+                <a mat-raised-button color="accent" routerLink="/senha/gerar/{{ estabelecimento._id }}">
+                    <span class="material-icons"> enhanced_encryption </span>
+                </a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="estabelecimentoColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: estabelecimentoColumns;"></tr>
+    </table>
+</mat-card>

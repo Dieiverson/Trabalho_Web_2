@@ -1,0 +1,28 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" class="sidenavprincipal" opened fixedInViewport="true" fixedTopGap="65" fixedBottomGap="65">
+        <mat-nav-list>
+            <h4>Usuários</h4>
+            <a mat-list-item routerLink="/">
+                <span class="material-icons">home</span> Início - Login
+            </a>
+            <a mat-list-item routerLink="/usuario/cadastro">
+                <span class="material-icons">person_add</span>Cadastro de Usuários
+            </a>
+            <a mat-list-item routerLink="/usuario/listar">
+                <span class="material-icons">people_alt</span>Listagem de Usuários
+            </a>
+            <br>
+            <hr>
+            <h4>Estabelecimentos</h4>
+            <a mat-list-item routerLink="/estabelecimento/cadastrar">
+                <span class="material-icons">house</span>Cadastro de Estabelecimentos
+            </a>
+            <a mat-list-item routerLink="/estabelecimento/listar">
+                <span class="material-icons">location_city</span>Listagem de Estabelecimentos
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

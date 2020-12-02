@@ -1,0 +1,24 @@
+<mat-card class="card">
+    <mat-card-title>Cadastrar estabelecimento</mat-card-title>
+    <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input matInput name="nome" [(ngModel)]="nome" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>CNPJ</mat-label>
+        <input matInput name="cnpj" [(ngModel)]="cnpj" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput name="senha" [(ngModel)]="senha" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Confirme a Senha</mat-label>
+        <input matInput name="senhaConfirmacao" [(ngModel)]="senhaConfirmacao" />
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Telefone</mat-label>
+        <input matInput name="telefone" [(ngModel)]="telefone" />
+    </mat-form-field>
+    <button (click)="cadastrar()" mat-raised-button color="primary">Cadastrar</button>
+</mat-card>

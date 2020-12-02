@@ -1,0 +1,17 @@
+.footer {
+    /* display: flex; */
+    position: fixed;
+    justify-content: center;
+    background-color: rgb(48, 48, 48);
+    bottom: 0 !important;
+    z-index: 20 !important;
+}
+
+.footer span {
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.mat-sidenav-container {
+    background-color: rgb(48, 48, 48);
+}
