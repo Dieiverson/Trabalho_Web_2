@@ -1,29 +1,31 @@
 const senhaSchema = require("../models/senhaSchema.js");
 
-class SenhaController 
-{
+class SenhaController {
 
-async gerarSenha (req, res) 
-{
+    async gerarSenha(req, res) {
+        let senha = "";
+        let result = '';
+        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let charactersLength = characters.length;
+        for (var i = 0; i < 5; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        senha = result;
+        const { idEstabelecimento, idPessoa } = req.body;
 
-const { idEstabelecimento, idPessoa } = req.body;
-const senha = Math.floor(Math.random() * (999 - 1)) + 1;
-try 
-{
-  await senhaSchema.create(
-    {
-    idEstabelecimento,
-    idPessoa,
-    senha
-    })
+        try {
+            await senhaSchema.create({
+                idEstabelecimento,
+                idPessoa,
+                senha
+            })
 
-  return res.status(201).json({ senha })
-} catch( err ) 
-{
-    console.log ( err );
-  return res.status(500).json({ error: 'Ocorreu um erro ao gerar senha' })
-}
-}
+            return res.status(201).json({ senha })
+        } catch (err) {
+            console.log(err);
+            return res.status(500).json({ error: 'Ocorreu um erro ao gerar senha' })
+        }
+    }
 }
 
 module.exports = new SenhaController();

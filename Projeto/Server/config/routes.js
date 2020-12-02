@@ -8,13 +8,13 @@ const senhaController = require("../controllers/senhaController.js")
 router.get("/Listar", usuarioController.Get);
 router.post("/Cadastrar", usuarioController.Cadastrar);
 router.post("/Deletar/:cpfUsuario", usuarioController.Remover);
-router.get("/Login/:usuario/:senha", usuarioController.Login);
+router.post("/Login", usuarioController.Login);
 router.post("/Alterar", usuarioController.Update);
 
 //Estabelecimento
 router.post("/CadastrarEstabelecimento", estabelecimentoController.CadastrarEstabelecimento);
 router.post("/DeletarEstabelecimento/:cnpjEstabelecimento", estabelecimentoController.RemoverEstabelecimento);
-router.get("/ListarEstabelecimento", estabelecimentoController.ListarEstabelecimento);
+router.get("/ListarEstabelecimentos", estabelecimentoController.ListarEstabelecimento);
 router.post("/senha/gerar", senhaController.gerarSenha);
 router.post("/AlterarEstabelecimento", estabelecimentoController.AlterarEstabelecimento);
 module.exports = router;

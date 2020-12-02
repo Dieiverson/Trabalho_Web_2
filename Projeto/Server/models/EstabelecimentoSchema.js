@@ -1,35 +1,25 @@
 const mongoose = require("mongoose");
 const { stringify } = require("querystring");
 
-const estabelecimentoSchema = new mongoose.Schema(
-{
-  
-    nome: 
-    {
+const estabelecimentoSchema = new mongoose.Schema({
+
+    nome: {
         type: String,
         required: [true, "O campo nome é obrigatório."]
     },
-    cnpj: 
-    {
+    cnpj: {
         type: String,
         required: [true, "O campo CNPJ é obrigatório."]
     },
-    senha: 
-    {
+    senha: {
         type: String,
         required: [true, "O campo senha é obrigatório."]
     },
-    dataCadastro: 
-    {
+    dataCadastro: {
         type: Date,
         default: Date.now
     },
-    enderecos:
-    {
-        type: String
-    },
-    telefone: 
-    {
+    telefone: {
         type: String
     }
 });
