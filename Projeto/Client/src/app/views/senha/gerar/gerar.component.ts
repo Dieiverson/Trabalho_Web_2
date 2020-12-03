@@ -11,11 +11,14 @@ import { SenhaService } from 'src/app/services/senha.service';
 export class GerarComponent implements OnInit {
 
   idEstabelecimento;senhaGerada;pessoasNaFila : string;
-  senha: Senha = new Senha(); 
+  senha: Senha = new Senha();
+  pessoas : number; 
   constructor(private service : SenhaService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.idEstabelecimento = this.route.snapshot.paramMap.get("id");    
+    this.idEstabelecimento = this.route.snapshot.paramMap.get("id");
+    this.pessoas =  Math.floor((Math.random()*10) +1); 
+    this.atualizarSenha();   
    
   }
   GerarSenha():void{
@@ -24,8 +27,24 @@ export class GerarComponent implements OnInit {
     this.senha.idPessoa = "5f7f95ccbcb5dd2704c7471b";
     this.service.gerarSenha(this.senha).subscribe((senha)=>{
       this.senhaGerada = "Sua senha é: " +  senha.senha.toUpperCase();
-    });
-    let pessoas = (Math.random()*10) +1;
-    this.pessoasNaFila = "Você é a " + Math.floor(pessoas) + "ª pessoa na fila."
+    });  
   }
+ 
+  atualizarSenha():void
+ {
+   if(this.pessoas > 0)
+   {
+      this.pessoas -= 1
+      this.pessoasNaFila = "Você é a " + this.pessoas + "ª pessoa na fila.";
+      setTimeout(() => 
+      {
+        this.atualizarSenha();
+      },5000)
+     
+   }
+   else
+   {
+      this.pessoasNaFila = "É a sua vez seu fela da puta!";
+   }
+ }
 }
