@@ -44,7 +44,7 @@ export class GerarComponent implements OnInit {
    }
    else
    {
-      this.pessoasNaFila = "É a sua vez seu fela da puta!";
+      this.pessoasNaFila = "É a sua vez!";
    }
  }
 }
